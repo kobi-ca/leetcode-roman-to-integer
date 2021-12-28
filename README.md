@@ -5,4 +5,5 @@
 ![img.png](img.png)
 
 # conan
-Cmd conan install -pr:b=default  --profile default-abi11 -s build_type=Debug ../conanfile.txt
+Cmd: conan install -pr:b=default  --profile default-abi11 -s build_type=Debug ../conanfile.txt
+-DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake

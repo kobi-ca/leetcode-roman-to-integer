@@ -63,5 +63,10 @@ TEST(roman_to_integer, ten) {
 
 TEST(roman_to_integer, fifteen) {
     std::string input("XV");
-    ASSERT_EQ(10, leetcode_roman_to_integer::get_number(input)) << " with input " << input;
+    ASSERT_EQ(15, leetcode_roman_to_integer::get_number(input)) << " with input " << input;
+}
+
+TEST(roman_to_integer, one_thousand_ninty_four) {
+    std::string input("MCMXCIV");
+    ASSERT_EQ(1994, leetcode_roman_to_integer::get_number(input)) << " with input " << input;
 }
