@@ -8,13 +8,14 @@ namespace leetcode_roman_to_integer {
 
     template <char first, char second>
     unsigned int get_special(const char c,
+                             unsigned int def,
                              unsigned int val_first,
                              unsigned int val_second,
                              size_t& idx) {
         unsigned int result{};
         switch(c) {
             default:
-                ++result;
+                result+=def;
                 break;
             case first:
                 result += val_first;
@@ -39,55 +40,19 @@ namespace leetcode_roman_to_integer {
                 default:
                     return 0;
                 case 'I':
-                    switch(s[idx+1]) {
-                        default:
-                            ++result;
-                            break;
-                        case 'V':
-                            result += 4;
-                            ++idx;
-                            break;
-                        case 'X':
-                            result += 9;
-                            ++idx;
-                            break;
-                    }
+                    result += get_special<'V', 'X'>(s[idx+1], 1, 4, 9, idx);
                     break;
                 case 'V':
                     result+=5;
                     break;
                 case 'X':
-                    switch(s[idx+1]) {
-                        default:
-                            result += 10;
-                            break;
-                        case 'L':
-                            result += 40;
-                            ++idx;
-                            break;
-                        case 'C':
-                            result += 90;
-                            ++idx;
-                            break;
-                    }
+                    result += get_special<'L', 'C'>(s[idx+1], 10, 40, 90, idx);
                     break;
                 case 'L':
                     result += 50;
                     break;
                 case 'C':
-                    switch(s[idx+1]) {
-                        default:
-                            result+=100;
-                            break;
-                        case 'D':
-                            result += 400;
-                            ++idx;
-                            break;
-                        case 'M':
-                            result += 900;
-                            ++idx;
-                            break;
-                    }
+                    result += get_special<'D', 'M'>(s[idx+1], 100, 400, 900, idx);
                     break;
                 case 'D':
                     result += 500;
