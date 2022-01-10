@@ -38,7 +38,7 @@ namespace leetcode_roman_to_integer {
             const auto c = s[idx];
             switch (c) {
                 default:
-                    return 0;
+                    return 0; // per leetcode description, should not happen. we can throw...
                 case 'I':
                     result += get_special<'V', 'X'>(s[idx+1], 1, 4, 9, idx);
                     break;
