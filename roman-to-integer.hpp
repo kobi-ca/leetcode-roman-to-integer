@@ -8,7 +8,7 @@
 #include <string_view>
 
 namespace leetcode_roman_to_integer {
-    unsigned int get_number(const std::string_view s);
+    unsigned int get_number(std::string_view s);
 }
 
 #endif //LEETCODE_ROMAN_TO_INTEGER_ROMAN_TO_INTEGER_HPP
