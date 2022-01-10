@@ -30,10 +30,10 @@ namespace leetcode_roman_to_integer {
     }
 
     unsigned int get_number(const std::string_view s) {
-        if (s.empty()) {
-            return 0;
-        }
         unsigned int result{};
+        if (s.empty()) {
+            return result;
+        }
         for (size_t idx{}; s[idx]; ++idx) {
             const auto c = s[idx];
             switch (c) {
