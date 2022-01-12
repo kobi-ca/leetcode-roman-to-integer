@@ -6,3 +6,5 @@
 
 #include "roman-to-integer-presented.hpp"
 
+TEST(roman_to_integer, empty) {
+}

@@ -9,9 +9,9 @@ find_package(gtest REQUIRED)
 add_library(roman_to_integer roman-to-integer.hpp roman-to-integer.cpp)
 target_link_libraries(roman_to_integer PUBLIC fmt::fmt)
 
-add_library(roman_to_integer-presented tdd-presented/roman-to-integer-presented.hpp
+add_library(roman_to_integer_presented tdd-presented/roman-to-integer-presented.hpp
                                        tdd-presented/roman-to-integer-presented.cpp)
-target_link_libraries(roman_to_integer-presented PUBLIC fmt::fmt)
+target_link_libraries(roman_to_integer_presented PUBLIC fmt::fmt)
 
 enable_testing()
 
@@ -19,6 +19,6 @@ add_executable(leetcode_roman_to_integer_test test.cpp)
 target_link_libraries(leetcode_roman_to_integer_test PRIVATE roman_to_integer gtest::gmock_main)
 add_test(leetcode_roman_to_integer_test leetcode_roman_to_integer_test)
 
-add_executable(leetcode_roman_to_integer_test-presented tdd-presented/test-presented.cpp)
-target_link_libraries(leetcode_roman_to_integer_test-presented PRIVATE roman_to_integer-presented gtest::gmock_main)
-add_test(leetcode_roman_to_integer_test-presented leetcode_roman_to_integer_test-presented)
+add_executable(leetcode_roman_to_integer_test_presented tdd-presented/test-presented.cpp)
+target_link_libraries(leetcode_roman_to_integer_test_presented PRIVATE roman_to_integer_presented gtest::gmock_main)
+add_test(leetcode_roman_to_integer_test_presented leetcode_roman_to_integer_test_presented)
