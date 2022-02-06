@@ -10,7 +10,7 @@
 #include "roman-to-integer-presented.hpp"
 
 namespace leetcode_roman_to_integer {
-    unsigned int get_number(const std::string& s);
+    unsigned int get_number(std::string_view s);
 }
 
 #endif //LEETCODE_ROMAN_TO_INTEGER_ROMAN_TO_INTEGER_PRESENTED_HPP
