@@ -30,3 +30,13 @@ TEST(roman_to_integer, four) {
     std::string input("IV");
     ASSERT_EQ(4, leetcode_roman_to_integer::get_number(input)) << " with input " << input;
 }
+
+TEST(roman_to_integer, five) {
+    std::string input("V");
+    ASSERT_EQ(5, leetcode_roman_to_integer::get_number(input)) << " with input " << input;
+}
+
+TEST(roman_to_integer, ten) {
+    std::string input("X");
+    ASSERT_EQ(10, leetcode_roman_to_integer::get_number(input)) << " with input " << input;
+}

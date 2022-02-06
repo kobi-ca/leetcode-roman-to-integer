@@ -31,6 +31,13 @@ namespace leetcode_roman_to_integer {
                             ++idx; // we consume it!
                             break;
                     }
+                    break;
+                case 'V':
+                    result += 5;
+                    break;
+                case 'X':
+                    result += 10;
+                    break;
             }
         }
         return result;
