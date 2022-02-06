@@ -13,6 +13,10 @@ add_library(roman_to_integer_presented tdd-presented/roman-to-integer-presented.
                                        tdd-presented/roman-to-integer-presented.cpp)
 target_link_libraries(roman_to_integer_presented PUBLIC fmt::fmt)
 
+add_library(roman_to_integer_presented_preparing_2_2022 tdd-presented-preparing-for-2-2022/roman-to-integer-presented.hpp
+        tdd-presented-preparing-for-2-2022/roman-to-integer-presented.cpp)
+target_link_libraries(roman_to_integer_presented_preparing_2_2022 PUBLIC fmt::fmt)
+
 enable_testing()
 
 add_executable(leetcode_roman_to_integer_test test.cpp)
@@ -22,3 +26,7 @@ add_test(leetcode_roman_to_integer_test leetcode_roman_to_integer_test)
 add_executable(leetcode_roman_to_integer_test_presented tdd-presented/test-presented.cpp)
 target_link_libraries(leetcode_roman_to_integer_test_presented PRIVATE roman_to_integer_presented gtest::gmock_main)
 add_test(leetcode_roman_to_integer_test_presented leetcode_roman_to_integer_test_presented)
+
+add_executable(leetcode_roman_to_integer_test_presented_preparing_2_2022 tdd-presented-preparing-for-2-2022/test-presented.cpp)
+target_link_libraries(leetcode_roman_to_integer_test_presented_preparing_2_2022 PRIVATE roman_to_integer_presented_preparing_2_2022 gtest::gmock_main)
+add_test(leetcode_roman_to_integer_test_presented_preparing_2_2022 leetcode_roman_to_integer_test_presented_preparing_2_2022)
