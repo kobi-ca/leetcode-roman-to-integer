@@ -13,14 +13,27 @@ namespace leetcode_roman_to_integer {
         if (s.empty()) {
             return 0;
         }
-        if (s.starts_with("II")) {
-            return 2;
+        unsigned int result{};
+        // I know it's null terminated.
+        // can't do range for loop, need the idx...
+        for(std::size_t idx{}; s[idx]; ++idx) {
+            const auto c = s[idx];
+            switch (c) {
+                default:
+                    return 0; // should not happen
+                case 'I':
+                    switch (s[idx+1]) {
+                        default: // null term or something else
+                        ++result;
+                            break;
+                        case 'V':
+                            result += 4;
+                            ++idx; // we consume it!
+                            break;
+                    }
+            }
         }
-        if (s.starts_with('I')) {
-            return 1;
-        }
-        // should not happen, s is valid!
-        return std::numeric_limits<unsigned int>::max();
+        return result;
     }
 
 }

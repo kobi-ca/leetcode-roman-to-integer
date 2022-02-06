@@ -20,3 +20,13 @@ TEST(roman_to_integer, two) {
     std::string input("II");
     ASSERT_EQ(2, leetcode_roman_to_integer::get_number(input)) << " with input " << input;
 }
+
+TEST(roman_to_integer, three) {
+    std::string input("III");
+    ASSERT_EQ(3, leetcode_roman_to_integer::get_number(input)) << " with input " << input;
+}
+
+TEST(roman_to_integer, four) {
+    std::string input("IV");
+    ASSERT_EQ(4, leetcode_roman_to_integer::get_number(input)) << " with input " << input;
+}
